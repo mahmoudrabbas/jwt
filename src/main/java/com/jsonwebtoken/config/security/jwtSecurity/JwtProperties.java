@@ -1,8 +1,14 @@
 package com.jsonwebtoken.config.security.jwtSecurity;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class JwtProperties {
-    public static final String SECRET = "itsmra99";
-    public static final int EXPIRATION_TIME = 864_000_000;
-    public static final String TOKEN_PREFIX = "Bearer ";
-    public static final String HEADER_STRING= "Authorization";
+    @Value("${jwt.secret}")
+    public static String SECRET;
+    @Value("${jwt.expiration}")
+    public static int EXPIRATION_TIME;
+    @Value("${jwt.tokenPrefix}")
+    public static String TOKEN_PREFIX;
+    @Value("${jwt.headerString}")
+    public static String HEADER_STRING;
 }
